@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="Image-Diplome.css">
+	<title>Diplôme</title>
+	<script>
+	function rechercherNote() {
+		if (opener != null) {
+			const note = opener.document.getElementById("reponse").textContent;
+			var mention = "";
+			if(note<10) {
+				alert("Malheureusement, vous n'avez pas eu votre Bac");
+			} else if (note>=12 && note<14) {
+				mention += "AVEC LA MENTION ASSEZ BIEN";
+			} else if (note>=14 && note<16) {
+				mention += "AVEC LA MENTION BIEN";
+			} else if (note>=16) {
+				mention += "AVEC LA MENTION TRÈS BIEN";
+			}
+			document.getElementById("mention").textContent += mention;
+		}
+		else {
+			alert("Cette fenêtre doit être ouverte avec Calcul-Bac.html");
+		}
+	}
+	
+	function fermetureFenetre() {
+		opener.visualisationOuverte = false;
+		opener.fen = null;
+	}
+	
+	function date()
+	{
+		const date = new Date;
+		const annee = date.getFullYear();
+		const numeroMois = date.getMonth();
+		const mois = Array('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');
+		const jour = date.getDate();
+		if(jour<10) {
+			jour = '0'+jour;
+		}
+		const resultat = jour+' '+mois[numeroMois]+' '+annee;
+		document.getElementById("date").textContent = resultat;
+	}
+	
+	function ouverturePage() {
+		rechercherNote();
+		date();
+	}
+	</script>
+</head>
+<body onload="ouverturePage()" onunload="fermetureFenetre()">
+	<p id="ac">Académie </p><input id="academie" type="text" size="20" placeholder="Votre académie">
+	<p id="date">01/01/1970</p>
+	<p id="jury">M/Mme ...</p>
+	<p id="mention">Serie SCIENTIFIQUE </p>
+	<select id="genre">
+			<option>MONSIEUR</option>
+			<option>MADEMOISELLE</option>
+			<option>MADAME</option>
+		</select>
+	<input id="nom" type="text" size="20" placeholder="Vos Nom et Prénom">
+</body>
+</html>

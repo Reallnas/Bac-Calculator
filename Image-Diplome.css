@@ -1,0 +1,56 @@
+/*
+	Si la page ne s'affiche pas correctement (ex: textes décalés ...),
+	"Image_Diplome.png" est une capture d'écran de la page avec tous les 
+	objets à leur bonne place.
+*/
+
+body {
+	background-image: url("faux-diplome-bac.jpg");
+	background-repeat:no-repeat;
+	background-size: 100%;
+	font-size: 15px;
+}
+
+#ac {
+	position: absolute;
+    left: 38%;
+    top: 10%;
+}
+
+#academie {
+	position: absolute;
+    left: 45%;
+    top: 11.5%;
+	font-size: 15px;
+}
+
+#date {
+	position: absolute;
+    left: 49%;
+    top: 40%;
+}
+
+#jury {
+	position: absolute;
+    left: 60%;
+    top: 45%;
+}
+
+#mention {
+	position: absolute;
+    left: 10%;
+    top: 54%;
+}
+
+#genre {
+	position: absolute;
+    left: 22%;
+    top: 60.3%;
+	font-size: 15px;
+}
+
+#nom {
+	position: absolute;
+    left: 36%;
+    top: 60.3%;
+}
